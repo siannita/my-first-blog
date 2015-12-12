@@ -1,12 +1,18 @@
 <html>
     <head>
-        <title>Mireia's blog</title>
+        <title>{{ title }}</title>
     </head>
     <body>
         <div>
             <h1><a href="">Mireia is cool</a></h1>
         </div>
-
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
         <div>
             <p>published: 12.12.2015, 13:30</p>
             <h2><a href="">My first post</a></h2>
